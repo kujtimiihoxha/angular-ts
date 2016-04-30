@@ -1,0 +1,39 @@
+{
+  "moduleName": "app",
+  "paths": {
+      "base": "client",
+      "app": "/app",
+      "img": "/img",
+      "fonts": "/fonts",
+      "lib": "/lib",
+      "typings":"typings/main.d.ts"
+  },
+  "main": "client/app/app.main.ts",
+  "index": "client/index.html",
+  "patters": {
+    "sass": "client/app/**/*.+(scss)",
+    "ts": "client/app/**/*.+(ts)",
+    "img": "client/img/**/*.{png,gif,jpg,jpeg}",
+    "fonts": "client/**/*.{eot,svg,ttf,woff,woff2}",
+    "templates":"client/app/**/*.+(template.html)"
+  },
+  "dist":{
+    "paths":{
+      "base": "dist",
+      "js": "/js",
+      "css": "/css",
+      "fonts": "/fonts",
+      "img": "/img",
+      "lib": "/lib"
+    },
+    "css":"app.min.css",
+    "js":"app.min.js"
+  },
+  "templates": {
+    "options": {
+      "moduleName": "app.templates",
+      "prefix": "./views/"
+    },
+    "out": "tpl.js"
+  }
+}
