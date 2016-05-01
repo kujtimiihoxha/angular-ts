@@ -15,6 +15,7 @@ import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import ngHtml2Js from 'gulp-ng-html2js';
 import fs from 'fs';
+
 /**
  * Config
  */
@@ -33,6 +34,9 @@ var onError = function(error) {
     gutil.log(gutil.colors.red(error));
     this.emit('end');
 };
+/**
+ * Task:tpl
+ */
 gulp.task('tpl', function() {
     return gulp.src([config.patters.templates])
         .pipe(sourcemaps.init())
@@ -41,7 +45,7 @@ gulp.task('tpl', function() {
         }))
         .pipe(ngHtml2Js(config.templates.options))
         .pipe(uglify())
-        .pipe(concat(config.templates.out))
+        .pipe(concat(config.dist.templates))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.dist.paths.base+config.dist.paths.js))
         .pipe(browserSync.reload({stream: true}));

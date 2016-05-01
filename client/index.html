@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+    <link id="load_plugins_before" />
+
+</head>
+<body>
+<header></header>
+<div ui-view></div>
+<div ng-init="test='hello'">{{test |reverse:true:'hello'}}</div>
+<div my-test></div>
+<test test="hithere"></test>
+<my-component></my-component>
+<script src="js/vendor.min.js"></script>
+<script src="js/tpl.min.js"></script>
+<script src="js/app.min.js"></script>
+
+</body>
+</html>

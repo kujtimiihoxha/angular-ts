@@ -17,6 +17,8 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'gulp-cssnano';
 import gutil from 'gulp-util';
 import fs from 'fs';
+import clean from 'gulp-clean'
+
 /**
  * Config
  */
@@ -36,7 +38,7 @@ var onError = function(error) {
     this.emit('end');
 };
 /**
- * Task
+ * Task:sass
  */
 gulp.task('sass', function() {
     return gulp.src([config.patters.sass])

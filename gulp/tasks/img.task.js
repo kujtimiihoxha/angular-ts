@@ -10,6 +10,7 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import imagemin from 'gulp-imagemin';
 import pngquant from 'imagemin-pngquant';
+import clean from 'gulp-clean'
 
 import fs from 'fs';
 /**
@@ -23,8 +24,17 @@ if (fs.existsSync('ng-ts.json')) {
     gutil.log("Please view the README.md to setup.");
     process.exit(1);
 }
-
-gulp.task('img', function() {
+/**
+ * Task:img-clean
+ */
+gulp.task('img-clean', function () {
+    return gulp.src(config.dist.paths.base+config.dist.paths.img, {read: false})
+        .pipe(clean());
+});
+/**
+ * Task:img
+ */
+gulp.task('img',['img-clean'], function() {
 
     return gulp.src(config.patters.img)
         .pipe(imagemin(config.patters.img,config.dist.paths.base+config.dist.paths.img,{

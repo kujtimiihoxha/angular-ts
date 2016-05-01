@@ -3,19 +3,12 @@
  * @copyright Copyright (c) 2016, Kujtim Hoxha
  * @license   MIT
  */
-/**
- * Plugins
- */
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-import ts from 'gulp-typescript';
-import uglify from 'gulp-uglify';
-import plumber  from 'gulp-plumber';
-import sourcemaps from 'gulp-sourcemaps';
 import browserSync from 'browser-sync';
-import concat from 'gulp-concat';
 import fs from 'fs';
-
+import plumber  from 'gulp-plumber';
+import htmlmin  from 'gulp-htmlmin';
 /**
  * Config
  */
@@ -35,23 +28,14 @@ var onError = function(error) {
     this.emit('end');
 };
 /**
- * Task:ts
+ * Task:fonts
  */
-gulp.task('ts', function() {
-    return gulp.src([config.src.paths.typings,config.src.main,config.src.decorators,config.patters.ts])
+gulp.task('index', function() {
+    return gulp.src([config.src.index])
         .pipe(plumber({
             errorHandler: onError
         }))
-        .pipe(sourcemaps.init())
-        .pipe(ts({
-            "noImplicitAny": true,
-            "suppressImplicitAnyIndexErrors": true,
-            "experimentalDecorators": true,
-            "out": "app.js"
-        }))
-        .pipe(uglify())
-        .pipe(concat(config.dist.js))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.dist.paths.base+config.dist.paths.js))
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest(config.dist.paths.base))
         .pipe(browserSync.reload({stream: true}));
 });
