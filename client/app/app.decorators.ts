@@ -62,8 +62,7 @@ module App{
      * @constructor
      */
     export function Directive(slct:string, directiveOptions:IDirective): any {
-        return (target: any,test:any) => {
-            console.log(target);
+        return (target: any) => {
             const selector = dashCaseToCamelCase(slct);
             if(angular.isUndefined(directiveOptions.controller)){
                 directiveOptions.controller = target;
@@ -95,7 +94,6 @@ module App{
         "use strict";
         return (target: any) => {
             angular.module("app").config(["$stateProvider", ($stateProvider: IStateProvider) => {
-                console.log("AddRoute");
                 if(angular.isUndefined(stateOptions.controller)){
                     stateOptions.controller = target;
                 }
@@ -130,6 +128,18 @@ module App{
         };
     }
 
+    /**
+     * Test decorator
+     * @param options
+     * @returns {function(any): undefined}
+     * @constructor
+     */
+    export function Test(options: any): any {
+        return (target: any) => {
+            options.tests = target
+            ngDescribe(options);
+        }
+    }
     /**
      * Inject decorator
      * @param dependencies names of dependencies to inject.

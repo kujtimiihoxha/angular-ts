@@ -35,7 +35,7 @@ module.exports = function(config) {
             typings: [
                 cnf.src.paths.typings,
                 cnf.src.appTypings,
-                cnf.src.main
+                cnf.src.main,
             ],
             // transforming the filenames
             transformPath: function(path) {

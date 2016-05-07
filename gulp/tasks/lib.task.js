@@ -31,7 +31,7 @@ var onError = function(error) {
  * Task:fonts-clean
  */
 gulp.task('lib-clean', function () {
-    return gulp.src(config.dist.paths.base+config.dist.paths.fonts, {read: false})
+    return gulp.src(config.dist.paths.base+config.dist.paths.lib, {read: false})
         .pipe(clean());
 });
 /**

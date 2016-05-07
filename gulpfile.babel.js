@@ -41,12 +41,18 @@ const  Server = karma.Server;
 
 gulp.task('watch', function(done) {
     gutil.log(gutil.colors.green('Loading Gulp Watch'), '');
-    browserSync.init({
-        server: {
-            baseDir: config.dist.paths.base,
-            index: "index.html"
-        }
-    });
+    if(config.proxy){
+        browserSync.init({
+            proxy:config.proxy
+        });
+    } else {
+        browserSync.init({
+            server: {
+                baseDir: config.dist.paths.base,
+                index: "index.html"
+            }
+        });
+    }
     gulp.watch(config.patters.ts, ['ts']);
     gulp.watch(config.patters.sass, ['sass']);
     gulp.watch(config.patters.img, ['img']);
@@ -75,17 +81,32 @@ gulp.task('test',["build"],function(done) {
         done();
     }).start();
 });
-gulp.task('build',[
-    'bower-js',
-    'bower-css',
-    'img',
-    'lib',
-    'fonts',
-    'ts',
-    'tpl',
-    'sass',
-    'index',
-])
+if (config.noIndex) {
+    gulp.task('build',
+        [
+            'bower-js',
+            'bower-css',
+            'img',
+            'lib',
+            'fonts',
+            'ts',
+            'tpl',
+            'sass'
+        ]);
+} else {
+    gulp.task('build',
+        [
+            'bower-js',
+            'bower-css',
+            'img',
+            'lib',
+            'fonts',
+            'ts',
+            'tpl',
+            'sass',
+            'index'
+        ]);
+}
 /**
  * Task: default
  */

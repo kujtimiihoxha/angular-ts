@@ -1,11 +1,12 @@
 {
   "moduleName": "app",
   "bowerJson":"./bower.json",
+  "noIndex": false,
   "src": {
      "paths":{
        "base": "client",
        "app": "/app",
-       "components": "/components",
+       "components": "/elements",
        "config": "/config",
        "constants": "/constants",
        "directives": "/directives",
@@ -56,8 +57,13 @@
   "tests":{
     "karma":"karma.conf.js",
     "preprocessors": {
-      "client/app/app.decorators.ts":  ["typescript"],
       "test/**/*.spec.ts": ["typescript"]
+    },
+    "paths":{
+      "base": "test",
+      "components":"/elements",
+      "services":"/services",
+      "directives":"/directives"
     }
   }
 }
