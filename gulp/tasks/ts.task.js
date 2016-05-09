@@ -46,8 +46,7 @@ gulp.task('ts', function() {
         .pipe(ts({
             "noImplicitAny": true,
             "suppressImplicitAnyIndexErrors": true,
-            "experimentalDecorators": true,
-            "out": "app.js"
+            "experimentalDecorators": true
         }))
         .pipe(uglify())
         .pipe(concat(config.dist.js))

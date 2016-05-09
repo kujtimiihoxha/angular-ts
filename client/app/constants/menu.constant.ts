@@ -28,17 +28,39 @@ module App.Constants{
     }
     @Constant("MenuConstant")
     class MenuConstant{
-        items: IMenuItem[]
+        items: IMenuItem[];
         constructor(){
             this.items=[];
             this.items.push(new MenuItem('angularTypescript','Angular Typescript',1));
             this.items.push(new MenuItem('gettingStarted','Getting Started',2));
-            this.items.push(new MenuItem('generators','Generators',3));
+            this.items.push(new MenuItem('generators','Generators',4));
+            this.items.push(new MenuItem('decorators','Decorators',3));
+            //Angular Typescript children
             this.items[0].addChild(new MenuItem('angularTypescript.quickStart','Quick Start',1));
-            this.items[0].addChild(new MenuItem('angularTypescript.features','Features',1));
+            this.items[0].addChild(new MenuItem('angularTypescript.features','Features',2));
+            //Getting Started children
             this.items[1].addChild(new MenuItem('gettingStarted.install','Install',1));
             this.items[1].addChild(new MenuItem('gettingStarted.usage','Usage',2));
+            //Generators children
             this.items[2].addChild(new MenuItem('generators.app','App',1));
+            this.items[2].addChild(new MenuItem('generators.component','Component',2));
+            this.items[2].addChild(new MenuItem('generators.config','Config',3));
+            this.items[2].addChild(new MenuItem('generators.constant','Constant',4));
+            this.items[2].addChild(new MenuItem('generators.directive','Directive',5));
+            this.items[2].addChild(new MenuItem('generators.filter','Filter',6));
+            this.items[2].addChild(new MenuItem('generators.route','Route',7));
+            this.items[2].addChild(new MenuItem('generators.run','Run',8));
+            this.items[2].addChild(new MenuItem('generators.service','Service',9));
+            //Decorators children
+            this.items[3].addChild(new MenuItem('decorators.component','@Component',1));
+            this.items[3].addChild(new MenuItem('decorators.config','@Config',1));
+            this.items[3].addChild(new MenuItem('decorators.constant','@Constant',1));
+            this.items[3].addChild(new MenuItem('decorators.directive','@Directive',1));
+            this.items[3].addChild(new MenuItem('decorators.filter','@Filter',1));
+            this.items[3].addChild(new MenuItem('decorators.route','@Route',1));
+            this.items[3].addChild(new MenuItem('decorators.run','@Run',1));
+            this.items[3].addChild(new MenuItem('decorators.service','@Service',1));
+            this.items[3].addChild(new MenuItem('decorators.inject','@Inject',1));
         }
     }
 }

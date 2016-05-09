@@ -4,7 +4,7 @@
   "noIndex": false,
   "src": {
      "paths":{
-       "base": "./client",
+       "base": "client",
        "app": "/app",
        "components": "/components",
        "config": "/config",
@@ -19,10 +19,10 @@
        "lib": "/lib",
        "typings":"typings/main.d.ts"
      } ,
-    "main": "./client/app/app.main.ts",
-    "decorators": "./client/app/app.decorators.ts",
-    "appTypings": "./client/app/app.d.ts",
-    "index": "./client/index.html"
+    "main": "client/app/app.main.ts",
+    "decorators": "client/app/app.decorators.ts",
+    "appTypings": "client/app/app.d.ts",
+    "index": "client/index.html"
   },
   "patters": {
     "sass": "./client/app/**/*.scss",
@@ -35,7 +35,7 @@
   },
   "dist":{
     "paths":{
-      "base": "./dist",
+      "base": "dist",
       "js": "/js",
       "css": "/css",
       "fonts": "/fonts",
@@ -60,7 +60,7 @@
       "test/**/*.spec.ts": ["typescript"]
     },
     "paths":{
-      "base": "./test",
+      "base": "test",
       "components":"/components",
       "services":"/services",
       "directives":"/directives"
