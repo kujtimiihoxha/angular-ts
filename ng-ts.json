@@ -4,9 +4,9 @@
   "noIndex": false,
   "src": {
      "paths":{
-       "base": "client",
+       "base": "./client",
        "app": "/app",
-       "components": "/elements",
+       "components": "/components",
        "config": "/config",
        "constants": "/constants",
        "directives": "/directives",
@@ -19,23 +19,23 @@
        "lib": "/lib",
        "typings":"typings/main.d.ts"
      } ,
-    "main": "client/app/app.main.ts",
-    "decorators": "client/app/app.decorators.ts",
-    "appTypings": "client/app/app.d.ts",
-    "index": "client/index.html"
+    "main": "./client/app/app.main.ts",
+    "decorators": "./client/app/app.decorators.ts",
+    "appTypings": "./client/app/app.d.ts",
+    "index": "./client/index.html"
   },
   "patters": {
-    "sass": "client/app/**/*.scss",
-    "ts": "client/app/**/*.ts",
-    "img": "client/img/**/*.{png,gif,jpg,jpeg}",
-    "fonts": "client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
-    "templates":"client/app/**/*.template.html",
-    "lib":"client/lib/**/*",
-    "tests":"test/**/*.spec.ts"
+    "sass": "./client/app/**/*.scss",
+    "ts": "./client/app/**/*.ts",
+    "img": "./client/img/**/*.{png,gif,jpg,jpeg}",
+    "fonts": "./client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
+    "templates":"./client/app/**/*.template.html",
+    "lib":"./client/lib/**/*",
+    "tests":"./test/**/*.spec.ts"
   },
   "dist":{
     "paths":{
-      "base": "dist",
+      "base": "./dist",
       "js": "/js",
       "css": "/css",
       "fonts": "/fonts",
@@ -60,8 +60,8 @@
       "test/**/*.spec.ts": ["typescript"]
     },
     "paths":{
-      "base": "test",
-      "components":"/elements",
+      "base": "./test",
+      "components":"/components",
       "services":"/services",
       "directives":"/directives"
     }

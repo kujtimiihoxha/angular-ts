@@ -8,7 +8,7 @@ module App.Configs{
     @Inject("$urlRouterProvider")
     class CoreConfig{
         constructor($urlRouterProvider:any){
-            $urlRouterProvider.otherwise("/");
+            $urlRouterProvider.otherwise("/angular-ts/quickStart");
         }
     }
 }

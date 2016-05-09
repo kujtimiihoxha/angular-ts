@@ -15,6 +15,7 @@ import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import ngHtml2Js from 'gulp-ng-html2js';
 import fs from 'fs';
+import htmlmin  from 'gulp-htmlmin';
 
 /**
  * Config
@@ -43,6 +44,7 @@ gulp.task('tpl', function() {
         .pipe(plumber({
             errorHandler: onError
         }))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(ngHtml2Js(config.templates.options))
         .pipe(uglify())
         .pipe(concat(config.dist.templates))
