@@ -136,7 +136,7 @@ module App{
      */
     export function Test(options: any): any {
         return (target: any) => {
-            options.tests = target
+            options.tests = target;
             ngDescribe(options);
         }
     }
