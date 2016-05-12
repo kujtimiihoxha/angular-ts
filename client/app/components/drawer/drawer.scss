@@ -1,0 +1,14 @@
+drawer {
+  .project:hover .logo img {
+      box-shadow: none;
+  }
+  .project .logo{
+    padding-right:0;
+  }
+  .project .logo img {
+    background: transparent;
+    display: inherit;
+    width: 110px;
+    height: 60px;
+  }
+}

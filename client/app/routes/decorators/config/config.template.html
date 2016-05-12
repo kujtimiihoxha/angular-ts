@@ -1,0 +1,11 @@
+<h1>@Config()</h1>
+<p>The <code>@Config</code> decorator is used to to register config functions, it does not accept any options.</p>
+<pre class="language-typescript" prism source="@Config()
+@Inject('Example')
+class FooConfig{
+    constructor(private example: any){
+        console.log('Foo config')
+    }
+}
+"></pre>
+<p>To create a config function use <a ui-sref="generators.config"><code>yo angular-ts:config</code></a>. To learn more about config functions see <a href="https://docs.angularjs.org/guide/module#configuration-blocks" target="_blank">angularjs config blocks documentation </a></p>
