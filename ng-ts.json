@@ -31,7 +31,7 @@
     "fonts": "./client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
     "templates":"./client/app/**/*.template.html",
     "lib":"./client/lib/**/*",
-    "tests":"./test/**/*.spec.ts"
+    "tests":"./tests/**/*.spec.ts"
   },
   "dist":{
     "paths":{
@@ -57,10 +57,10 @@
   "tests":{
     "karma":"karma.conf.js",
     "preprocessors": {
-      "test/**/*.spec.ts": ["typescript"]
+      "tests/**/*.spec.ts": ["typescript"]
     },
     "paths":{
-      "base": "test",
+      "base": "tests",
       "components":"/components",
       "services":"/services",
       "directives":"/directives"

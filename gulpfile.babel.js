@@ -61,7 +61,7 @@ gulp.task('watch', function(done) {
     gulp.watch(config.patters.fonts, ['fonts']);
     gulp.watch(config.patters.lib, ['lib']);
     gulp.watch(config.src.index, ['index']);
-    if(process.argv.indexOf("--no-test")=== -1){
+    if(process.argv.indexOf("--no-tests")=== -1){
         new Server({
             configFile: __dirname +"/"+config.tests.karma,
         },  function() {

@@ -31,10 +31,10 @@ module App.Constants{
         items: IMenuItem[];
         constructor(){
             this.items=[];
-            this.items.push(new MenuItem('angularTypescript','Angular Typescript',1));
-            this.items.push(new MenuItem('gettingStarted','Getting Started',2));
-            this.items.push(new MenuItem('generators','Generators',4));
-            this.items.push(new MenuItem('decorators','Decorators',3));
+            this.items.push(new MenuItem('angularTypescript.quickStart','Angular Typescript',1));
+            this.items.push(new MenuItem('gettingStarted.install','Getting Started',2));
+            this.items.push(new MenuItem('generators.component','Generators',4));
+            this.items.push(new MenuItem('decorators.component','Decorators',3));
             //Angular Typescript children
             this.items[0].addChild(new MenuItem('angularTypescript.quickStart','Quick Start',1));
             this.items[0].addChild(new MenuItem('angularTypescript.features','Features',2));
@@ -42,7 +42,6 @@ module App.Constants{
             this.items[1].addChild(new MenuItem('gettingStarted.install','Install',1));
             this.items[1].addChild(new MenuItem('gettingStarted.usage','Usage',2));
             //Generators children
-            this.items[2].addChild(new MenuItem('generators.app','App',1));
             this.items[2].addChild(new MenuItem('generators.component','Component',2));
             this.items[2].addChild(new MenuItem('generators.config','Config',3));
             this.items[2].addChild(new MenuItem('generators.constant','Constant',4));
