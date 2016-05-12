@@ -5,7 +5,7 @@
  */
 module App.Configs{
     @Config()
-    @Inject("$urlRouterProvider")
+    @Inject('$urlRouterProvider')
     class CoreConfig{
         constructor($urlRouterProvider:any){
             $urlRouterProvider.otherwise("/angular-ts/quickStart");
