@@ -1,4 +1,4 @@
-# Angular 1.5 Typescript Starter
+# Angular-Ts Project
 This repository is the example created when you use ```generator-angular-ts``` to create your application.
 It is also the documentation for ```angular-ts```.
 
