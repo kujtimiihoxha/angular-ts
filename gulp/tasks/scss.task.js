@@ -41,7 +41,7 @@ var onError = function(error) {
  * Task:sass
  */
 gulp.task('sass', function() {
-    return gulp.src([config.patters.sass])
+    return gulp.src([config.src.patters.sass])
         .pipe(plumber({
             errorHandler: onError
         }))

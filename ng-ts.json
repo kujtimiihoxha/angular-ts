@@ -1,7 +1,7 @@
 {
   "moduleName": "app",
   "bowerJson":"./bower.json",
-  "noIndex": false,
+  "index": true,
   "src": {
      "paths":{
        "base": "client",
@@ -19,19 +19,24 @@
        "lib": "/lib",
        "typings":"typings/main.d.ts"
      } ,
+    "patters": {
+      "sass": "./client/app/**/*.scss",
+      "ts": "./client/app/**/*.ts",
+      "img": "./client/img/**/*.{png,gif,jpg,jpeg}",
+      "fonts": "./client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
+      "templates":"./client/app/**/*.template.html",
+      "lib":"./client/lib/**/*"
+    },
+    "templates": {
+      "options": {
+        "moduleName": "app.templates",
+        "prefix": "./views/"
+      }
+    },
     "main": "client/app/app.main.ts",
     "decorators": "client/app/app.decorators.ts",
     "appTypings": "client/app/app.d.ts",
     "index": "client/index.html"
-  },
-  "patters": {
-    "sass": "./client/app/**/*.scss",
-    "ts": "./client/app/**/*.ts",
-    "img": "./client/img/**/*.{png,gif,jpg,jpeg}",
-    "fonts": "./client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
-    "templates":"./client/app/**/*.template.html",
-    "lib":"./client/lib/**/*",
-    "tests":"./tests/**/*.spec.ts"
   },
   "dist":{
     "paths":{
@@ -48,12 +53,6 @@
     "vendorCss":"vendor.min.css",
     "templates":"tpl.min.js"
   },
-  "templates": {
-    "options": {
-      "moduleName": "app.templates",
-      "prefix": "./views/"
-    }
-  },
   "tests":{
     "karma":"karma.conf.js",
     "preprocessors": {
@@ -63,7 +62,11 @@
       "base": "tests",
       "components":"/components",
       "services":"/services",
-      "directives":"/directives"
+      "directives":"/directives",
+      "filters":"/filters"
+    },
+    "patters":{
+      "tests":"./tests/**/*.spec.ts"
     }
   }
 }

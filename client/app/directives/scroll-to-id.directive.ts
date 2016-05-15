@@ -8,7 +8,9 @@ module App.Directives{
                     $('html, body').animate({
                         scrollTop: $(`#${attrs.scrollToId}`).offset().top
                     }, 1000);
-                })
+                });
+            element.css({cursor:'pointer'})
+
         }
         
     }

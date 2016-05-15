@@ -53,13 +53,13 @@ gulp.task('watch', function(done) {
             }
         });
     }
-    gulp.watch(config.patters.ts, ['ts']);
-    gulp.watch(config.patters.sass, ['sass']);
-    gulp.watch(config.patters.img, ['img']);
+    gulp.watch(config.src.patters.ts, ['ts']);
+    gulp.watch(config.src.patters.sass, ['sass']);
+    gulp.watch(config.src.patters.img, ['img']);
     gulp.watch(config.bowerJson, ['bower-js','bower-css']);
-    gulp.watch(config.patters.templates, ['tpl']);
-    gulp.watch(config.patters.fonts, ['fonts']);
-    gulp.watch(config.patters.lib, ['lib']);
+    gulp.watch(config.src.patters.templates, ['tpl']);
+    gulp.watch(config.src.patters.fonts, ['fonts']);
+    gulp.watch(config.src.patters.lib, ['lib']);
     gulp.watch(config.src.index, ['index']);
     if(process.argv.indexOf("--no-tests")=== -1){
         new Server({
@@ -81,7 +81,7 @@ gulp.task('test',["build"],function(done) {
         done();
     }).start();
 });
-if (config.noIndex) {
+if (!config.index) {
     gulp.task('build',
         [
             'bower-js',

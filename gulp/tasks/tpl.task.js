@@ -39,13 +39,13 @@ var onError = function(error) {
  * Task:tpl
  */
 gulp.task('tpl', function() {
-    return gulp.src([config.patters.templates])
+    return gulp.src([config.src.patters.templates])
         .pipe(sourcemaps.init())
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(ngHtml2Js(config.templates.options))
+        .pipe(ngHtml2Js(config.src.templates.options))
         .pipe(uglify())
         .pipe(concat(config.dist.templates))
         .pipe(sourcemaps.write('.'))

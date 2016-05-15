@@ -36,8 +36,8 @@ gulp.task('img-clean', function () {
  */
 gulp.task('img',['img-clean'], function() {
 
-    return gulp.src(config.patters.img)
-        .pipe(imagemin(config.patters.img,config.dist.paths.base+config.dist.paths.img,{
+    return gulp.src(config.src.patters.img)
+        .pipe(imagemin(config.src.patters.img,config.dist.paths.base+config.dist.paths.img,{
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]

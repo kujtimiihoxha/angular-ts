@@ -52,14 +52,14 @@ gulp.task('ts', function() {
         .pipe(sourcemaps.init())
         .pipe(ts({
             'noImplicitAny': true,
-'suppressImplicitAnyIndexErrors': true,
-'experimentalDecorators': true
-}))
-.pipe(uglify())
-.pipe(concat(config.dist.js))
-.pipe(sourcemaps.write('.'))
-.pipe(gulp.dest(config.dist.paths.base+config.dist.paths.js))
-.pipe(browserSync.reload({stream: true}));
+            'suppressImplicitAnyIndexErrors': true,
+            'experimentalDecorators': true
+        }))
+        .pipe(uglify())
+        .pipe(concat(config.dist.js))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(config.dist.paths.base+config.dist.paths.js))
+        .pipe(browserSync.reload({stream: true}));
 });"></pre>
 </p>
 <h2 id="custom_decorators_section">Custom Decorators</h2>
@@ -153,78 +153,81 @@ gulp.task('tpl', function() {
 </p>
 <p>
     The ng-ts.json file contains the necessary options used by the generator and gulp to create and build your app.
-    <pre class="language-json" prism source='{"moduleName": "app",
-"bowerJson":"./bower.json",
-"noIndex": false,
-"src": {
-"paths":{
-"base": "client",
-"app": "/app",
-"components": "/components",
-"config": "/config",
-"constants": "/constants",
-"directives": "/directives",
-"filters": "/filters",
-"routes": "/routes",
-"run": "/run",
-"services": "/services",
-"img": "/img",
-"fonts": "/fonts",
-"lib": "/lib",
-"typings":"typings/main.d.ts"
-} ,
-"main": "client/app/app.main.ts",
-"decorators": "client/app/app.decorators.ts",
-"appTypings": "client/app/app.d.ts",
-"index": "client/index.html"
-},
-"patters": {
-"sass": "./client/app/**/*.scss",
-"ts": "./client/app/**/*.ts",
-"img": "./client/img/**/*.{png,gif,jpg,jpeg}",
-"fonts": "./client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
-"templates":"./client/app/**/*.template.html",
-"lib":"./client/lib/**/*",
-"tests":"./test/**/*.spec.ts"
-},
-"dist":{
-"paths":{
-"base": "dist",
-"js": "/js",
-"css": "/css",
-"fonts": "/fonts",
-"img": "/img",
-"lib": "/lib"
-},
-"css":"app.min.css",
-"js":"app.min.js",
-"vendorJs":"vendor.min.js",
-"vendorCss":"vendor.min.css",
-"templates":"tpl.min.js"
-},
-"templates": {
-"options": {
-"moduleName": "app.templates",
-"prefix": "./views/"
-}
-},
-"tests":{
-"karma":"karma.conf.js",
-"preprocessors": {
-"test/**/*.spec.ts": ["typescript"]
-},
-"paths":{
-"base": "test",
-"components":"/components",
-"services":"/services",
-"directives":"/directives"
-}
-}
+    <pre class="language-json" prism source='{
+  "moduleName": "app",
+  "bowerJson":"./bower.json",
+  "index": true,
+  "src": {
+     "paths":{
+       "base": "client",
+       "app": "/app",
+       "components": "/components",
+       "config": "/config",
+       "constants": "/constants",
+       "directives": "/directives",
+       "filters": "/filters",
+       "routes": "/routes",
+       "run": "/run",
+       "services": "/services",
+       "img": "/img",
+       "fonts": "/fonts",
+       "lib": "/lib",
+       "typings":"typings/main.d.ts"
+     } ,
+    "patters": {
+      "sass": "./client/app/**/*.scss",
+      "ts": "./client/app/**/*.ts",
+      "img": "./client/img/**/*.{png,gif,jpg,jpeg}",
+      "fonts": "./client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
+      "templates":"./client/app/**/*.template.html",
+      "lib":"./client/lib/**/*"
+    },
+    "templates": {
+      "options": {
+        "moduleName": "app.templates",
+        "prefix": "./views/"
+      }
+    },
+    "main": "client/app/app.main.ts",
+    "decorators": "client/app/app.decorators.ts",
+    "appTypings": "client/app/app.d.ts",
+    "index": "client/index.html"
+  },
+  "dist":{
+    "paths":{
+      "base": "dist",
+      "js": "/js",
+      "css": "/css",
+      "fonts": "/fonts",
+      "img": "/img",
+      "lib": "/lib"
+    },
+    "css":"app.min.css",
+    "js":"app.min.js",
+    "vendorJs":"vendor.min.js",
+    "vendorCss":"vendor.min.css",
+    "templates":"tpl.min.js"
+  },
+  "tests":{
+    "karma":"karma.conf.js",
+    "preprocessors": {
+      "tests/**/*.spec.ts": ["typescript"]
+    },
+    "paths":{
+      "base": "tests",
+      "components":"/components",
+      "services":"/services",
+      "directives":"/directives"
+    },
+    "patters":{
+      "tests":"./tests/**/*.spec.ts"
+    }
+  }
 }'></pre>
 </p>
 <p>If you are using a backend server that serves the application entry ex. laravel and blade you can tell
-    gulp to skip index.html by setting <code>"noIndex": true</code>, then you add a new property <code>"proxy":"localhost:8000"</code>(ex. for laravel) to the root of the
-config right bellow <code>"noIndex": true</code>, now the auto reload server
+    gulp to skip index.html by setting <code>"index": false</code>, then you add a new property <code>"proxy":"localhost:8000"</code>(ex. for laravel) to the root of the
+config right bellow <code>"index": false</code>, now the auto reload server
 will link to your running laravel backend.</p>
 <p>Every folder changed in the configuration files will change the location the files are created by the generator.</p>
 <div class="admonition warning">

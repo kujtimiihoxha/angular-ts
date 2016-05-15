@@ -38,7 +38,7 @@ gulp.task('fonts-clean', function () {
  * Task:fonts
  */
 gulp.task('fonts',['fonts-clean'], function() {
-    return gulp.src([config.patters.fonts])
+    return gulp.src([config.src.patters.fonts])
         .pipe(gulp.dest(config.dist.paths.base+config.dist.paths.fonts))
         .pipe(browserSync.reload({stream: true}));
 });

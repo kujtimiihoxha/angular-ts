@@ -16,7 +16,7 @@ module.exports = function(config) {
             "node_modules/ng-describe/dist/ng-describe.js",
             cnf.dist.paths.base+cnf.dist.paths.js+'/'+cnf.dist.templates,
             cnf.dist.paths.base+cnf.dist.paths.js+'/'+cnf.dist.js,
-            cnf.patters.tests
+            cnf.tests.patters.tests
         ],
         browsers: ["PhantomJS"],
 

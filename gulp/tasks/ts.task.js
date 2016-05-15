@@ -38,7 +38,7 @@ var onError = function(error) {
  * Task:ts
  */
 gulp.task('ts', function() {
-    return gulp.src([config.src.paths.typings,config.src.main,config.src.decorators,config.patters.ts])
+    return gulp.src([config.src.paths.typings,config.src.main,config.src.decorators,config.src.patters.ts])
         .pipe(plumber({
             errorHandler: onError
         }))

@@ -1,2 +1,56 @@
-<h1>Welcome to 'filter' route under the '/filter'  url</h1>
-<div ui-view></div>
+<h1>Filter Generator</h1>
+<p>The filter generator is used to create angular filters.</p>
+<p>To create a directive execute the following.</p>
+<pre class="language-bash" prism source="yo angular-ts:filter name=baz"></pre>
+<p>After the generator finishes one file will be created.</p>
+<ul>
+    <li><b>baz.filter.ts</b>: filter function</li>
+     <pre class="language-typescript" prism source="module App.Configs{
+    @Filter('baz')
+    class BazConfig{
+        constructor(input:string){
+            var out = '';
+            //Do something with the input.
+            return out;
+        }
+    }
+}
+"></pre>
+</ul>
+<p>The filter will be created in the filters folder.</p>
+<pre class="language-bash" prism source="|-- your-app/
+|   |-- client/
+|   |   |-- app/
+|   |   |   |-- filters/
+|   |   |   |   |-- baz.filter.ts
+"></pre>
+<p>Besides the filter the generator automatically adds a test to the test folder.</p>
+<pre class="language-bash" prism source="|-- your-app/
+|   |-- tests/
+|   |   |-- filters/
+|   |   |   |-- baz.filter.spec.ts
+"></pre>
+<ul>
+    <li><b>baz.filter.spec.ts</b></li>
+    <pre class="language-typescript" prism source="module Tests.Filters {
+  @App.Test(
+    {
+      modules: 'app',
+      inject:['$filter']
+    }
+  )
+  class BazFilterTest{
+    constructor(deps){
+      it('some test', function () {
+          //Your filter
+          let baz = deps.$filter('baz');
+      });
+    }
+  }
+}
+"></pre>
+</ul>
+<div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>If you don't want to create the test with the filter just add <code>--noTest</code> flag after the options of the generator.</p>
+</div>
