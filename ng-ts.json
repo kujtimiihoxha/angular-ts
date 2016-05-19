@@ -24,7 +24,7 @@
       "ts": "./client/app/**/*.ts",
       "img": "./client/img/**/*.{png,gif,jpg,jpeg}",
       "fonts": "./client/fonts/**/*.{eot,svg,ttf,woff,woff2}",
-      "templates":"./client/app/**/*.template.html",
+      "templates":"./client/app/**/*.html",
       "lib":"./client/lib/**/*"
     },
     "templates": {

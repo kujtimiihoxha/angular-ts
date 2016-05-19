@@ -1,13 +1,17 @@
 <h1>Filter Generator</h1>
 <p>The filter generator is used to create angular filters.</p>
 <p>To create a directive execute the following.</p>
-<pre class="language-bash" prism source="yo angular-ts:filter name=baz  [flags]"></pre>
+<pre class="language-bash" prism source="yo angular-ts:filter name=baz [options]  [flags]"></pre>
 <p>After the generator finishes one file will be created.</p>
+<h2>Options</h2>
+<ul>
+    <li><a scroll-to-id="param"><code>param</code></a> : adds additional parameters to the filter function</li>
+</ul>
 <ul>
     <li><b>baz.filter.ts</b>: filter function</li>
-     <pre class="language-typescript" prism source="module App.Configs{
+     <pre class="language-typescript" prism source="module App.Filters{
     @Filter('baz')
-    class BazConfig{
+    class BazFilter{
         constructor(input:string){
             var out = '';
             //Do something with the input.
@@ -32,7 +36,7 @@
 "></pre>
 <ul>
     <li><b>baz.filter.spec.ts</b></li>
-    <pre class="language-typescript" prism source="module Tests.Filters {
+    <pre class="language-typescript" prism source="module App.Filters {
   @App.Test(
     {
       modules: 'app',
@@ -50,7 +54,25 @@
 }
 "></pre>
 </ul>
+
 <div class="admonition note">
     <p class="admonition-title">Note</p>
     <p>If you don't want to create the test with the filter just add <code>--noTest</code> flag after the options of the generator.</p>
 </div>
+<h2 id="param">Param</h2>
+<p>The <code>param</code> option will tell the generator to add additional parameters to the filter function.</p>
+<pre class="language-bash" prism source="yo angular-ts:filter name=baz param=foo,bar"></pre>
+<ul>
+    <li><b>baz.filter.ts</b></li>
+     <pre class="language-typescript" prism source="module App.Filters{
+    @Filter('baz')
+    class BazFilter{
+        constructor(input:string,foo: any ,bar: any ){
+            var out = '';
+            //Do something with the input.
+            return out;
+        }
+    }
+}
+"></pre>
+</ul>
