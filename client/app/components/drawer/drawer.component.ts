@@ -5,6 +5,5 @@ module App.Components {
     @Inject("MenuConstant")
     class DrawerComponent{
         constructor(private menuConstant:any){ }
-       
     }
 }

@@ -11,6 +11,7 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import browserSync from 'browser-sync';
 import fs from 'fs';
+import watch from 'gulp-watch';
 /**
  * Config
  */
@@ -53,14 +54,46 @@ gulp.task('watch', function(done) {
             }
         });
     }
-    gulp.watch(config.src.patters.ts, ['ts']);
-    gulp.watch(config.src.patters.sass, ['sass']);
-    gulp.watch(config.src.patters.img, ['img']);
-    gulp.watch(config.bowerJson, ['bower-js','bower-css']);
-    gulp.watch(config.src.patters.templates, ['tpl']);
-    gulp.watch(config.src.patters.fonts, ['fonts']);
-    gulp.watch(config.src.patters.lib, ['lib']);
-    gulp.watch(config.src.index, ['index']);
+    watch(config.src.patters.ts,function () {
+        gulp
+            .start('ts')
+            .on('end', browserSync.reload);
+    });
+    watch(config.src.patters.sass,function () {
+        gulp
+            .start('sass')
+            .on('end', browserSync.reload);
+    });
+    watch(config.src.patters.img,function () {
+        gulp
+            .start('img')
+            .on('end', browserSync.reload);
+    });
+    watch(config.bowerJson,function () {
+        gulp
+            .start(['bower-js','bower-css'])
+            .on('end', browserSync.reload);
+    });
+    watch(config.src.patters.templates,function () {
+        gulp
+            .start('tpl')
+            .on('end', browserSync.reload);
+    });
+    watch(config.src.patters.fonts,function () {
+        gulp
+            .start('fonts')
+            .on('end', browserSync.reload);
+    });
+    watch(config.src.patters.lib,function () {
+        gulp
+            .start('lib')
+            .on('end', browserSync.reload);
+    });
+    watch(config.src.index,function () {
+        gulp
+            .start('index')
+            .on('end', browserSync.reload);
+    });
     if(process.argv.indexOf("--no-tests")=== -1){
         new Server({
             configFile: __dirname +"/"+config.tests.karma,
@@ -68,7 +101,6 @@ gulp.task('watch', function(done) {
             done();
         }).start()
     }
-    gulp.watch(config.template_files).on('change', browserSync.reload);
 });
 /**
  * Task:test

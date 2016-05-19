@@ -2,7 +2,7 @@
 <p>The component generator is used to create angular 1.5 components.
     Angular-ts component generator has a number of options that will make it easy to add new components to your application.</p>
 <p>To create a component execute the following.</p>
-<pre class="language-bash" prism source="yo angular-ts:component selector=foo-bar [options]"></pre>
+<pre class="language-bash" prism source="yo angular-ts:component selector=foo-bar [options] [flags]"></pre>
 <div class="admonition note">
     <p class="admonition-title">Note</p>
     <p>The selector is the name of the html <code>tag</code> the component will have,
@@ -150,6 +150,10 @@ to maintain a better folder structure.</p>
 |   |   |   |   |   |-- foo-bar.scss
 |   |   |   |   |   |-- foo-bar.template.html
 "></pre>
+<div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>You can use <code>--forceParent</code> to create the parent directory if it does not exist</p>
+</div>
 <p>Also the test will be created under the <code>foo-bar</code> component test.</p>
 <pre class="language-bash" prism source="|-- your-app/
 |   |-- tests/

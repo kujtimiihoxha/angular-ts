@@ -10,7 +10,6 @@ interface JQuery {
 }
 declare const ngDescribe:any;
 declare const Prism:any;
-declare const PR:any;
 interface HTMLElement extends Element {
     checked:boolean;
 }

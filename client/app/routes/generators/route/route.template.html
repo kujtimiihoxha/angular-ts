@@ -1,2 +1,16 @@
-<h1>Welcome to 'route' route under the '/route'  url</h1>
-<div ui-view></div>
+<h1>Route Generator</h1>
+<p>The rote generator is used to create angular-ui routes.
+    Angular-ts route generator has a number of options that will make it easy to add new route to your application.</p>
+<p>To create a route execute the following.</p>
+<pre class="language-bash" prism source="yo angular-ts:route name=baz url=/baz [options] [flags]"></pre>
+
+<h2>Options</h2>
+<ul>
+    <li><a scroll-to-id="inject"><code>inject</code></a> : dependencies to inject in the controller</li>
+    <li><a scroll-to-id="component"><code>component</code></a> : makes the template of the route a component</li>
+    <li><a scroll-to-id="parent"><code>parent</code></a> : parent of component</li>
+</ul>
+<h2>Flags</h2>
+<ul>
+    <li><a scroll-to-id="abstract"><code>--abstract</code></a> : implement link function</li>
+</ul>

@@ -17,7 +17,7 @@
        "img": "/img",
        "fonts": "/fonts",
        "lib": "/lib",
-       "typings":"typings/main.d.ts"
+       "typings":"typings/index.d.ts"
      } ,
     "patters": {
       "sass": "./client/app/**/*.scss",
