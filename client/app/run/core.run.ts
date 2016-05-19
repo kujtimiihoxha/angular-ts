@@ -5,7 +5,7 @@ module App.Runs{
     class CoreRun{
         constructor(rootScope: IRootScopeService,timeout:any){
             rootScope.$on('$stateChangeSuccess',function(){
-                $("html, body").animate({ scrollTop: 0 }, 200);
+                $("html, body").animate({ scrollTop: 0 }, 100);
             })
         }
     }
