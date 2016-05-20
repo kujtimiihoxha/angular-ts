@@ -1,3 +1,8 @@
+/**
+ * @author    Kujtim Hoxha {@link http://kujtimhoxha.com}
+ * @copyright Copyright (c) 2016, Kujtim Hoxha
+ * @license   MIT
+ */
 module App.Runs{
     import IRootScopeService = angular.IRootScopeService;
     @Run()

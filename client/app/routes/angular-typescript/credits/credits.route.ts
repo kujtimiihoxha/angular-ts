@@ -4,11 +4,11 @@
  * @license   MIT
  */
 module App.Routes.AngularTypescript {
-    @Route("angularTypescript.features",{ 
-        url:"/features",  
-        templateUrl:"./views/routes/angular-typescript/features/features.template.html"
+    @Route("angularTypescript.credits",{ 
+        url:"/credits",  
+        templateUrl:"./views/routes/angular-typescript/credits/credits.template.html"
     })
-    class FeaturesRoute{
+    class CreditsRoute{
         constructor(){
         }
     }

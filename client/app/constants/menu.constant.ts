@@ -1,3 +1,8 @@
+/**
+ * @author    Kujtim Hoxha {@link http://kujtimhoxha.com}
+ * @copyright Copyright (c) 2016, Kujtim Hoxha
+ * @license   MIT
+ */
 module App.Constants{
     export interface IMenuItem{
         state:string,
@@ -33,11 +38,12 @@ module App.Constants{
             this.items=[];
             this.items.push(new MenuItem('angularTypescript.quickStart','Angular Typescript',1));
             this.items.push(new MenuItem('gettingStarted.install','Getting Started',2));
-            this.items.push(new MenuItem('generators.component','Generators',4));
-            this.items.push(new MenuItem('decorators.component','Decorators',3));
+            this.items.push(new MenuItem('generators.component','Generators',3));
+            this.items.push(new MenuItem('decorators.component','Decorators',4));
             //Angular Typescript children
             this.items[0].addChild(new MenuItem('angularTypescript.quickStart','Quick Start',1));
             this.items[0].addChild(new MenuItem('angularTypescript.features','Features',2));
+            this.items[0].addChild(new MenuItem('angularTypescript.credits','Credits',3));
             //Getting Started children
             this.items[1].addChild(new MenuItem('gettingStarted.install','Install',1));
             this.items[1].addChild(new MenuItem('gettingStarted.usage','Usage',2));

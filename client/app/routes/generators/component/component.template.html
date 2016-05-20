@@ -1,3 +1,8 @@
+<!--
+  @author    Kujtim Hoxha {@link http://kujtimhoxha.com}
+  @copyright Copyright (c) 2016, Kujtim Hoxha
+  @license   MIT
+-->
 <h1>Component Generator</h1>
 <p>The component generator is used to create angular 1.5 components.
     Angular-ts component generator has a number of options that will make it easy to add new components to your application.</p>
@@ -11,9 +16,15 @@
 </div>
 <h2>Options</h2>
 <ul>
-    <li><a scroll-to-id="inject"><code>inject</code></a> : dependencies to inject in the controller</li>
-    <li><a scroll-to-id="bind"><code>bind</code></a> : binding values (by default it creates the bindings as input only)</li>
-    <li><a scroll-to-id="parent"><code>parent</code></a> : parent of component</li>
+    <li><code>selector</code> : html tag of the component.  <i class="required">[REQUIRED]</i></li>
+    <li><a scroll-to-id="inject"><code>inject</code></a> : dependencies to inject in the controller.</li>
+    <li><a scroll-to-id="bind"><code>bind</code></a> : binding values (by default it creates the bindings as input only).</li>
+    <li><a scroll-to-id="parent"><code>parent</code></a> : parent of component.</li>
+</ul>
+<h2>Flags</h2>
+<ul>
+    <li><code>--noTest</code> : don't generate test automatically.</li>
+    <li><code>--forceParent</code> : force the parent directory</li>
 </ul>
 <h2 id="simple-component">Create a simple Component</h2>
 <p>To create a component ex. <code>foo-bar</code> component run.</p>

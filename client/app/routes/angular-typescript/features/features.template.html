@@ -1,6 +1,11 @@
+<!--
+  @author    Kujtim Hoxha {@link http://kujtimhoxha.com}
+  @copyright Copyright (c) 2016, Kujtim Hoxha
+  @license   MIT
+-->
 <h1>Features</h1>
 <p>
-    Angular-Ts packs a lot of features that will make the development of angular apps very easy.It has a single configuration file
+    Angular-Ts packs a lot of features that will make the development of angular apps very easy. It has a single configuration file
 that allows u to configure most of the features that angular-ts has to offer.
     <ul>
         <li><a scroll-to-id="generators_section">A lot of Generators</a></li>
@@ -10,9 +15,9 @@ that allows u to configure most of the features that angular-ts has to offer.
         <li><a scroll-to-id="template_cache_section">Template Caching integration</a></li>
         <li><a scroll-to-id="configuration_section">Easy configuration ng-ts.json</a></li>
         <li><a scroll-to-id="bower_dependencies">Automatically import bower dependencies</a></li>
+        <li><a scroll-to-id="tests">Karma,Jasmine tests</a></li>
         <li>Gulp Tasks && Gulp Watch</li>
         <li>Minification & Concatenation</li>
-        <li>Karma,Jasmine tests</li>
     </ul>
 </p>
 <h2 id="generators_section">Generators</h2>
@@ -264,3 +269,7 @@ of this is bootstrap it does not list the css and js in the main of the bower fi
     }
   }'></pre>
 <p>This works with any package that depends on another package but the developer did not include it on the dependencies list</p>
+<h2 id="tests">Tests</h2>
+<p>Angular-ts <code>@Test</code> decorator uses <code>ng-describe</code> under the hood to for testing, to see all the options that are provided by <code>ng-describe</code>
+see <a href="https://github.com/kensho/ng-describe" target="_blank">ng-describe github repository</a> </p>
+<p>For running the test angular-ts uses <code>Karma</code> and <code>PhantomJS</code></p>
