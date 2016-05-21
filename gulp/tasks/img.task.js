@@ -9,7 +9,6 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import imagemin from 'gulp-imagemin';
-import pngquant from 'imagemin-pngquant';
 import clean from 'gulp-clean'
 
 import fs from 'fs';
@@ -37,11 +36,7 @@ gulp.task('img-clean', function () {
 gulp.task('img',['img-clean'], function() {
 
     return gulp.src(config.src.patters.img)
-        .pipe(imagemin(config.src.patters.img,config.dist.paths.base+config.dist.paths.img,{
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
+        .pipe(imagemin())
         .pipe(gulp.dest(config.dist.paths.base+config.dist.paths.img));
 
 });
